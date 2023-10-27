@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: intent-entity-api
+  namespace: default
+  labels:
+    app: intent-entity-api
+spec:
+  selector:
+    matchLabels:
+      app: intent-entity-api
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: intent-entity-api
+    spec:
+        containers:
+          - name: intent-entity-api
+            image: gcr.io/test-ari-project-401120/intent-entity-api:v1
+            resources:
+              requests:
+                cpu: "2"
+                memory: 4Gi
+            ports:
+              - containerPort: 5002
