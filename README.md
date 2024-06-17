@@ -1,4 +1,5 @@
-This is the code to implement name entity Recognotion system
+This is the code to implement name entity recognition (NER) system
+It can be used a machine learning project in production to implement (NER) sytem
 
 
 intent_entity_detection/views.py -- Flask API file which is gets the request call model which makes prediction and returns the json object
